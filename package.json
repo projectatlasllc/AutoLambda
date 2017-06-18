@@ -1,5 +1,5 @@
 {
-  "name": "aws-lambda-manager",
+  "name": "autolambda",
   "version": "0.2.0",
   "description": "Used to Create and Deploy Lambda applications and push to git",
   "main": "index.js",

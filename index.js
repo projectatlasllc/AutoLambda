@@ -1,7 +1,7 @@
 var util = require('util');
 
 var child_process = require('child_process');
-var config = require('./config.json');
+var defaults = require('./defaults.json');
 var init = require('./init.json');
 var readlineSync = require('readline-sync');
 
@@ -43,11 +43,11 @@ if(args['_'][0]=== "create") {
     var desc;
 
     if(!args.handler){
-    handler = config.handlerName;
+    handler = defaults.handlerName;
     }
 
     if(!args.arn){
-    arn = config.roleARN;
+    arn = defaults.roleARN;
     }
     //Check if
     if(!args.name){
@@ -94,7 +94,7 @@ if(args['_'][0]=== "create") {
 
 
 
-if(args['_'][0]=== "deploy") {
+if(args['_'][0]=== "publish") {
    
     var handler;
     var arn;
@@ -102,26 +102,23 @@ if(args['_'][0]=== "deploy") {
     var desc;
 
     if(!args.handler){
-    handler = config.handlerName;
+    handler = defaults.handlerName;
     }
 
     if(!args.arn){
-    arn = config.roleARN;
+    arn = defaults.roleARN;
     }
     //Check if
     if(!args.name){
      throw 'Required --name <function name> parameter';
     }
 
-    if(!args.runtime){
-       throw 'Required --runtime <node; python; dotnet> parameter ';  
-    }
     
     var functionName = args.name;
     var runtime = args.runtime;
 
     var desc = readlineSync.question('Enter a description for your changes: ');
-    var command = util.format("./publish.sh \"%s\" \"%s\" ",functionname,  desc);
+    var command = util.format("./publish.sh \"%s\" \"%s\" ",functionName,  desc);
     child_process.exec(command,
     function (error, stdout, stderr) {
         console.log(stdout);

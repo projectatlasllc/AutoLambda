@@ -1,7 +1,6 @@
 #1 - Modules Description
 
 
-
 echo $1 >> readme.md
 git init
 git add .
