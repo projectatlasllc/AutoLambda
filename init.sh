@@ -1,7 +1,8 @@
-#1 - Modules Description
+#1 - Directory name
+#2 - Modules Description
 
-
-echo $1 >> readme.md
+mkdir $1
+echo $2 >> readme.md
 git init
 git add .
 git commit -m "Init commit with Modules Folder"

@@ -23,9 +23,15 @@ function (error, stdout, stderr) {});
 
 
 if(args['_'][0]=== "init") {
-     
+    
+    if(!args.name){
+     throw 'Required --name <directory name> parameter';
+    }
+
+    var functionName = args.name;
+
     var desc = readlineSync.question('Enter a description for these set of functions: ');
-    var command = util.format("./init.sh \"%s\" \"%s\" ", desc );
+    var command = util.format("./init.sh \"%s\" \"%s\" ", functionName, desc );
     child_process.exec(command,
     function (error, stdout, stderr) {
         console.log(stderr);
