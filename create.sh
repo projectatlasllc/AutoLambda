@@ -15,9 +15,12 @@ readme='readme.md'
 mkdir $1 
 cd $1
 
+#Ignore our deployment archives in the commits
+echo "deployment.zip" >> ./gitignore
+
 #If runtime is node, ignore node_modules folders in the git commits
 if [[ $2 == *"node"* ]]; then
-  echo "node_modules/" >> /.gitignore
+  echo "node_modules/" >> ./gitignore
 fi
 
 touch $4 

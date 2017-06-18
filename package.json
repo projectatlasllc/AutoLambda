@@ -14,5 +14,9 @@
     "deploy"
   ],
   "author": "Ravi Lingineni",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rlingineni/autolambda"
+  },  
   "license": "MIT"
 }
