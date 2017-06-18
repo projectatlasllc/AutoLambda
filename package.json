@@ -1,0 +1,18 @@
+{
+  "name": "aws-lambda-manager",
+  "version": "0.2.0",
+  "description": "Used to Create and Deploy Lambda applications and push to git",
+  "main": "index.js",
+  "dependencies": {
+      "minimist":"1.2.0",
+      "readline-sync":"1.4.7",
+      "child_process": "1.0.2"
+  },
+  "keywords": [
+    "AWS",
+    "lambda",
+    "deploy"
+  ],
+  "author": "Ravi Lingineni",
+  "license": "MIT"
+}

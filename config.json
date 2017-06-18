@@ -1,0 +1,8 @@
+{
+    "fileName":"deployment.zip",
+    "roleARN":"arn:aws:iam::939884077921:role/service-role/WebeAPI",
+    "handlerName":"main",
+    "desc":"Function Deployed using AutoLambda"
+    
+
+}

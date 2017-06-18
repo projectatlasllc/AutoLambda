@@ -1,0 +1,4 @@
+{
+    "node": "exports.myHandler = function(event, context, callback) {\r\n  callback(null,\"Hello World\")\r\n}",
+    "python":"def myHandler(event, context): \r\n    return \"Hello World\""
+}
