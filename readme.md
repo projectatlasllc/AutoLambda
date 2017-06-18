@@ -19,11 +19,9 @@ autolambda utilizes bash scripts for its commands
 npm install -g autolambda
 ```
 
-Change the "defaults.json" to set a default role name
-
-
 ## Usage
 
+### Init Main Directory
 ```shell
 autolambda init
 ```
@@ -33,6 +31,7 @@ Creates local `git` and adds a readme with description adding necessary files.
 
 Use the init command to set-up a parent directory for all your lambda functions. Useful for creating a set of associated Lambda functions, eg. API, or image-pipeline
 
+### Create Function
 ```shell
 autolambda create --name <function-name> --runtime <node,python>
 --role <Role ARN> 
@@ -41,6 +40,7 @@ Asks for function description.  You may set a default role in the `defaults.json
 
 Will initialize and create a Lambda function and publish to AWS. You may use `node` or `python` as a runtime. A `deployment.zip` and uploaded. 
 
+### Publish change To Git And AWS
 A separate commit is made for the creation of this function.
 
 ```shell
@@ -52,6 +52,7 @@ A separate commit is made for the creation of this function.
 
 ## Future Work
 
+* Validation and Tests 
 * Need to add settings command to easily change `defaults.json`
 * Move away from to utilize REST API calls
 
