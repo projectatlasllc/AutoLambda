@@ -1,11 +1,11 @@
 
 
 # autolambda 
-Simple CLI utility to organize similar lambda functions within a master directory. You may also create and publish functions while also publishing to git.
+Simple CLI utility to organize similar AWS Lambda functions within a master directory. A git repo is initialized at the root and each change is bundled as a commit.
 
 ## Prerequisites 
 
-Make sure your system supports bash scripts
+Make sure your system supports bash scripts. Tested on MacOS
 
 
 1. Make sure `git` commands are available in your $PATH for your shell
