@@ -1,6 +1,6 @@
 {
   "name": "autolambda",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Used to Create and Deploy Lambda applications and push to git",
   "dependencies": {
       "minimist":"1.2.0",
@@ -17,7 +17,7 @@
   "author": "Ravi Lingineni",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rlingineni/autolambda"
+    "url": "https://github.com/projectatlasllc/AutoLambda"
   },  
   "preferGlobal": true,
     "directories": {
