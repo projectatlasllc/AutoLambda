@@ -28,7 +28,7 @@ autolambda init --name myFunctions --desc "These functions are related"
 cd myFunctions
 autolambda defaults --role "arn:aws:iam::abcdefghijk"
 autolambda create --name HelloNode --runtime node --desc "Hello World Function in Node"      
-autolambda publish --name HelloNode --desc "Changed file ABC"      
+autolambda publish --name HelloNode --desc "changed main.js text"      
 autolambda delete --name HelloNode 
 ```
 ## API
