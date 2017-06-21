@@ -23,16 +23,21 @@ npm install -g autolambda
 
 ## Usage
 
+#### Init Main Directory
 ```shell
 autolambda init --name myFunctions --desc "These functions are related"
 cd myFunctions
-autolambda defaults --role "arn:aws:iam::abcdefghijk"
-autolambda create --name HelloNode --runtime node --desc "Hello World Function in Node"      
-autolambda publish --name HelloNode --desc "changed main.js text"      
-autolambda delete --name HelloNode 
 ```
+#### Create & Publish Function for First Time
+```shell
+autolambda create --name HelloNode --runtime node --role "arn:aws:iam::abcdefghijk" --desc "Hello World Function in Node"  
+```
+#### Publish and Update to the Function
+```shell   
+autolambda publish --name HelloNode --desc "changed main.js text"   
+```
+   
 ## API
-
 
 ### Init Main Directory
 ```shell
@@ -63,6 +68,11 @@ A `deployment.zip` is made and uploaded.
 autolambda publish --name <function-name> 
 ```
 Asks for the change set to commit. Commits and the deployment package to Lambda. Only commits files that have changed for this particular function.
+
+### Delete Function
+autolambda delete --name HelloNode 
+
+Deletes function and folder
 
 ### Set a Default Role
 ```shell
