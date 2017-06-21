@@ -12,7 +12,9 @@ Make sure your system supports bash scripts
 
 2. Install the [aws-cli](https://aws.amazon.com/cli/) in your global path 
 
-autolambda utilizes bash scripts for its commands
+**autolambda utilizes `bash` scripts for its commands**
+
+**folder names should be the same as AWS lambda function names**
 
 ## Install
 ```shell
@@ -21,34 +23,53 @@ npm install -g autolambda
 
 ## Usage
 
+```shell
+autolambda init --name myFunctions --desc "These functions are related"
+cd myFunctions
+autolambda defaults --role "arn:aws:iam::abcdefghijk"
+autolambda create --name HelloNode --runtime node --desc "Hello World Function in Node"      
+autolambda publish --name HelloNode --desc "Changed file ABC"      
+autolambda delete --name HelloNode 
+```
+## API
+
+
 ### Init Main Directory
 ```shell
-autolambda init
+autolambda init [--desc <text>] 
 ```
-Asks for description for the set of functions that will be placed here.
 
-Creates local `git` and adds a readme with description adding necessary files.
+Creates local `git` and adds a readme with description from user.
 
-Use the init command to set-up a parent directory for all your lambda functions. Useful for creating a set of associated Lambda functions, eg. API, or image-pipeline
+Sets-up a parent directory for all your lambda functions. Useful for creating a set of associated Lambda functions, eg. API, or image-pipeline.
 
 ### Create Function
 ```shell
-autolambda create --name <function-name> --runtime <node,python>
---role <Role ARN> 
+autolambda create --name <function-name> --runtime <node,python> 
+[--role <Role ARN>] [--desc <text>] 
 ```
-Asks for function description.  You may set a default role in the `defaults.json` (Go to package install location and find the file)
+Asks for function description.  You may also set a default role for your session with the defaults command.
 
-Will initialize and create a Lambda function and publish to AWS. You may use `node` or `python` as a runtime. A `deployment.zip` and uploaded. 
+You may use `node` or `python` as a runtime. 
+
+Will initialize and create a Lambda function and publish to AWS. The default AWS file is used to create your function. 
+
+
+A `deployment.zip` is made and uploaded. 
 
 ### Publish change To Git And AWS
-A separate commit is made for the creation of this function.
 
 ```shell
 autolambda publish --name <function-name> 
 ```
-Asks for the change set to commit. Commits and publishes the deployment package to Lambda.
+Asks for the change set to commit. Commits and the deployment package to Lambda. Only commits files that have changed for this particular function.
 
-A separate commit is made for the creation of this function. 
+### Set a Default Role
+```shell
+autolambda defaults --role <ROLE ARN> 
+```
+This lets you set a default role for your session that all `create` functions will use when setting up your lambda functions
+
 
 ## Future Work
 

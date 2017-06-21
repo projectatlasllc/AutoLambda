@@ -2,6 +2,7 @@
 #2 - Modules Description
 
 mkdir $1
+cd $1
 echo $2 >> readme.md
 git init
 git add .

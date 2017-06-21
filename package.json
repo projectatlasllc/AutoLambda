@@ -1,22 +1,27 @@
 {
   "name": "autolambda",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Used to Create and Deploy Lambda applications and push to git",
-  "main": "index.js",
   "dependencies": {
       "minimist":"1.2.0",
       "readline-sync":"1.4.7",
-      "child_process": "1.0.2"
+      "child_process": "1.0.2",
+      "node-persist":"2.0.11"
   },
   "keywords": [
     "AWS",
     "lambda",
     "deploy"
   ],
+  
   "author": "Ravi Lingineni",
   "repository": {
     "type": "git",
     "url": "https://github.com/rlingineni/autolambda"
   },  
+  "preferGlobal": true,
+    "directories": {
+    "bin": "./bin"
+  },
   "license": "MIT"
 }
