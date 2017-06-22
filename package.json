@@ -1,6 +1,6 @@
 {
   "name": "autolambda",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Used to Create and Deploy Lambda applications and push to git",
   "dependencies": {
       "minimist":"1.2.0",
